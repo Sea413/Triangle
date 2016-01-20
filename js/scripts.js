@@ -1,21 +1,14 @@
-var leapYear = function(year) {
-  return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
-};
-
 $(document).ready(function() {
-  $("form#leap-year").submit(function(event) {
-    var year = parseInt($("input#year").val());
-    var result = leapYear(year);
-
-    $(".year").text(year);
-
-    if(!leapYear(year)) {
-      $(".not").text("not");
-    } else {
-      $(".not").text("");
-    }
-
-    $("#result").show();
+  $("form#rick").submit(function(event) {
+    var s1 = parseInt($("input#summer").val());
+    var s2 = parseInt($("input#jerry").val());
+    var s3 = parseInt($("input#beth").val());
+    // var treebeard = parseInt(s1, 10) + parseInt(s2, 10) + parseInt(s3, 10);
+      if (s1 === s2 && s1 === s3 && s2 === s3) {
+      $('.eqi').show();
+      } else {
+      $('.PANIC').show();
+      }
 
     event.preventDefault();
   });
